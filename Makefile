@@ -1,6 +1,3 @@
-# test: src/util.cpp src/test.cpp src/vigenere.cpp src/autokeyvigenere.cpp src/fullvigenere.cpp
-# 	g++ src/util.cpp src/test.cpp src/vigenere.cpp src/autokeyvigenere.cpp src/fullvigenere.cpp -o test
-
 CX:=g++ -O2
 
 TESTOBJS:=\
@@ -13,20 +10,20 @@ TESTOBJS:=\
 	src/affine.o\
 	src/test.o
 
-# LIBS:=\
-# 	-lGL\
-# 	-lglut\
-# 	-lm
+OBJS:=\
+	src/util.o\
+	src/vigenere.o\
+	src/autokeyvigenere.o\
+	src/fullvigenere.o\
+	src/extendedvigenere.o\
+	src/playfair.o\
+	src/affine.o\
+	src/main_window.o\
+	src/main.o
 
-# WLIBS:=\
-# 	-lopengl32\
-# 	-lglut32\
-# 	-lglu32\
-# 	-lglext\
-# 	-lm
+QT5FLAGS!=pkg-config --cflags Qt5Widgets Qt5Qml
+QT5LIBS!=pkg-config --libs Qt5Widgets Qt5Qml
 
-# CFLAGS:=\
-# 	-Iglm-0.9.7.1
 
 .PHONY: all clean
 
@@ -37,10 +34,17 @@ all: test
 test: $(TESTOBJS)
 	$(CX) $^ -o $@
 
+crypttools: $(OBJS)
+	$(CX) $^ -o $@ $(QT5FLAGS) $(QT5LIBS)
+
 .cpp.o:
-	$(CX) -MD -c $< -o $@
+	$(CX) -MD -fPIC -c $< -o $@ $(QT5FLAGS) $(QT5LIBS)
+
+compile_flags:
+	printf "%s\n" $(QT5FLAGS) > compile_flags.txt
 
 clean:
 	rm test */*.o */*.d
 
 -include $(OBJS:.o=.d)
+-include $(TESTOBJS:.o=.d)

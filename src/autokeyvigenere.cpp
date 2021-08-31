@@ -1,5 +1,5 @@
-#include "autokeyvigenere.h"
-#include "util.h"
+#include "autokeyvigenere.hpp"
+#include "util.hpp"
 #include <iostream>
 
 std::string autokey_vigenere_encrypt(std::string p, std::string k) {

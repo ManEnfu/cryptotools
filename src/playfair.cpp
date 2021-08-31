@@ -1,5 +1,5 @@
-#include "playfair.h"
-#include "util.h"
+#include "playfair.hpp"
+#include "util.hpp"
 #include <cstddef>
 #include <iostream>
 

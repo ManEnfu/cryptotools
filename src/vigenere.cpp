@@ -1,5 +1,5 @@
-#include "vigenere.h"
-#include "util.h"
+#include "vigenere.hpp"
+#include "util.hpp"
 #include <iostream>
 
 std::string vigenere_encrypt(std::string p, std::string k) {

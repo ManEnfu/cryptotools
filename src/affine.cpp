@@ -1,5 +1,5 @@
-#include "affine.h"
-#include "util.h"
+#include "affine.hpp"
+#include "util.hpp"
 
 std::string affine_encrypt(std::string p, int m, int b) {
     uppercase(p);

@@ -1,5 +1,5 @@
-#include "extendedvigenere.h"
-#include "util.h"
+#include "extendedvigenere.hpp"
+#include "util.hpp"
 #include <iostream>
 
 std::string extended_vigenere_encrypt(std::string p, std::string k) {

@@ -1,5 +1,5 @@
-#include "fullvigenere.h"
-#include "util.h"
+#include "fullvigenere.hpp"
+#include "util.hpp"
 #include <cstddef>
 #include <ctime>
 #include <cstdlib>

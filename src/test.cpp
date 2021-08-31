@@ -1,9 +1,9 @@
-#include "affine.h"
-#include "fullvigenere.h"
-#include "vigenere.h"
-#include "autokeyvigenere.h"
-#include "playfair.h"
-#include "util.h"
+#include "affine.hpp"
+#include "fullvigenere.hpp"
+#include "vigenere.hpp"
+#include "autokeyvigenere.hpp"
+#include "playfair.hpp"
+#include "util.hpp"
 #include <iostream>
 
 int main() {
