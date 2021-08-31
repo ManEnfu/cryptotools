@@ -1,3 +1,4 @@
+#include "affine.h"
 #include "fullvigenere.h"
 #include "vigenere.h"
 #include "autokeyvigenere.h"
@@ -50,5 +51,13 @@ int main() {
     std::cout << pke << "\n";
     std::cout << playfair_decrypt(pke, pk) << "\n";
 
+    std::string affineplain("kripto");
+    std::cout << affineplain << "\n";
+    std::string affinecrypt = affine_encrypt(affineplain, 7, 10);
+    std::cout << affinecrypt << "\n";
+    std::cout << affine_decrypt(affinecrypt, 7, 10) << "\n";
+
+    std::cout << mod_inverse(7, 26) << "\n";
+    std::cout << mod_inverse(15, 26) << "\n";
 
 }

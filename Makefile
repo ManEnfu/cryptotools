@@ -10,6 +10,7 @@ TESTOBJS:=\
 	src/fullvigenere.o\
 	src/extendedvigenere.o\
 	src/playfair.o\
+	src/affine.o\
 	src/test.o
 
 # LIBS:=\
