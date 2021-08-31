@@ -1,3 +1,4 @@
+#include "fullvigenere.h"
 #include "vigenere.h"
 #include "autokeyvigenere.h"
 #include "util.h"
@@ -23,12 +24,16 @@ int main() {
     std::cout << crypt << "\n";
     std::cout << vigenere_decrypt(crypt, key) << "\n";
     
-    std::string crypt2 = autokey_vigenere_encrypt(plain, key2);
+    std::cout << "\n";
+    generate_fvt();
+    print_fvt();
+    std::cout << "\n";
+
+    std::string crypt2 = full_vigenere_encrypt(plain, key2);
     std::cout << plain << "\n";
     std::cout << key2 << "\n";
     std::cout << crypt2 << "\n";
-    std::cout << autokey_vigenere_decrypt(crypt2, key2) << "\n";
+    std::cout << full_vigenere_decrypt(crypt2, key2) << "\n";
 
-    
 
 }
