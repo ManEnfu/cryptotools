@@ -1,6 +1,7 @@
 #include "fullvigenere.h"
 #include "vigenere.h"
 #include "autokeyvigenere.h"
+#include "playfair.h"
 #include "util.h"
 #include <iostream>
 
@@ -34,6 +35,20 @@ int main() {
     std::cout << key2 << "\n";
     std::cout << crypt2 << "\n";
     std::cout << full_vigenere_decrypt(crypt2, key2) << "\n";
+
+    std::string plt("temuj jbu nanti malam");
+    std::cout << plt << "\n";
+    PlayfairBigramForm pbf(plt);
+    std::cout << pbf.to_string() << "\n";
+
+    std::string pk("jalanganeshasepuluh");
+    std::cout << pk << "\n";
+    pk = playfair_convert_key(pk);
+    std::cout << pk << "\n";
+
+    std::string pke = playfair_encrypt(plt, pk);
+    std::cout << pke << "\n";
+    std::cout << playfair_decrypt(pke, pk) << "\n";
 
 
 }

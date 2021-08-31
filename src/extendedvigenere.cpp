@@ -1,4 +1,3 @@
-
 #include "extendedvigenere.h"
 #include "util.h"
 #include <iostream>
