@@ -4,12 +4,14 @@
 #include <QMainWindow>
 #include <QLabel>
 #include "inputbox_area.hpp"
+#include "singlekeybox_area.hpp"
 
 class MainWindow: public QMainWindow {
 private:
     QLabel *label;
-    InputBoxArea *inputbox_area;
-    InputBoxArea *inputbox_area2;
+    InputBoxArea *plaintextbox_area;
+    InputBoxArea *ciphertextbox_area;
+    SingleKeyBoxArea * vigenerekeybox_area;
 public:
     MainWindow(QWidget *parent, int width, int height);
     ~MainWindow();
