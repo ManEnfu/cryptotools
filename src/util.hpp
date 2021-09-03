@@ -3,8 +3,9 @@
 
 #include <string>
 
-void uppercase(std::string& str);
-void filter_alphabet(std::string& str);
+std::string uppercase(std::string str);
+std::string filter_alphabet(std::string str);
+std::string blockof5(std::string str);
 
 struct GCDExtData {
     unsigned int gcd;

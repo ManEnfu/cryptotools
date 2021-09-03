@@ -1,20 +1,36 @@
 #include "util.hpp"
 #include <iostream>
 
-void uppercase(std::string& str) {
+std::string uppercase(std::string str) {
+    std::string ret;
     for (std::string::iterator it = str.begin(); it != str.end(); it++) {
-        if (*it >= 'a' && *it <= 'z') *it -= 32;
+        if (*it >= 'a' && *it <= 'z') ret.push_back(*it - 32);
     }
+    return ret;
 }
 
-void filter_alphabet(std::string &str) {
-    std::string::iterator j = str.begin();
+std::string filter_alphabet(std::string str) {
+    std::string ret;
     for (std::string::iterator it = str.begin(); it != str.end(); it++) {
-        if (*it < 'A' || (*it > 'Z' && *it < 'a') || *it > 'z') {
-            std::string::iterator ot = it--;
-            str.erase(ot);
+        if ((*it >= 'A' && *it <= 'Z') || (*it >= 'a' && *it <= 'z')) {
+            ret.push_back(*it);
         }
     }
+    return ret;
+}
+
+std::string blockof5(std::string str) {
+    std::string ret;
+    int j = 0;
+    for (auto it = str.begin(); it != str.end(); it++) {
+        ret.push_back(*it);
+        if (j >= 5) {
+            ret.push_back(' ');
+            j = 0;
+        }
+        j++;
+    }
+    return ret;
 }
 
 GCDExtData gcd_extended(int a, int b) {
