@@ -28,6 +28,7 @@ HEADERS += src/affine.hpp \
            src/vigenerekeybox_area.hpp \
            src/fullvigenerekeybox_area.hpp \
            src/autokeyvigenerekeybox_area.hpp \
+           src/extendedvigenerekeybox_area.hpp \
            src/playfairkeybox_area.hpp \
            src/affinekeybox_area.hpp \
            
@@ -45,6 +46,7 @@ SOURCES += src/affine.cpp \
            src/vigenerekeybox_area.cpp \
            src/fullvigenerekeybox_area.cpp \
            src/autokeyvigenerekeybox_area.cpp \
+           src/extendedvigenerekeybox_area.cpp \
            src/playfairkeybox_area.cpp \
            src/affinekeybox_area.cpp \
 

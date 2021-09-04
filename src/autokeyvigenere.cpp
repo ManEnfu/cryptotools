@@ -24,14 +24,20 @@ std::string autokey_vigenere_decrypt(std::string c, std::string k) {
     k = filter_alphabet(k);
     c = uppercase(c);
     c = filter_alphabet(c);
+    size_t j = 0;
+    bool use_p = false;
    
     std::string p;
-    for (std::string::iterator cit = c.begin(), kit = k.begin(); cit != c.end(); cit++, kit++) {
-        if (kit == k.end()) kit = p.begin();
-        char pc = *cit - (*kit - 'A');
+    for (std::string::iterator cit = c.begin(); cit != c.end(); cit++, j++) {
+        if (j == k.size() && !use_p) {
+            j = 0;
+            use_p = true;
+        }
+        char kc = use_p ? p[j] : k[j]; 
+        char pc = *cit - (kc - 'A');
         if (pc < 'A') pc += 26;
         if (pc > 'Z') pc -= 26;
-        std::cout << *cit << " " << (int)*cit << " " << *kit <<  " " << (int) *kit << " " << pc  << " " << (int)pc<< "\n";
+        /* std::cout << *cit << " " << (int)*cit << " " << *kit <<  " " << (int) *kit << " " << pc  << " " << (int)pc<< " " <<  (kit == p.end())  << "\n"; */
 
         p.push_back(pc);
     }
