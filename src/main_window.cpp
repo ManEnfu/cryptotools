@@ -4,13 +4,15 @@
 #include <QTextEdit>
 
 
-MainWindow::MainWindow(QWidget *parent, int width, int height) {
+MainWindow::MainWindow(QWidget *parent, int width, int height)
+    : QMainWindow(parent) {
     this->setWindowTitle("CryptTools");
     this->plaintextbox_area = new InputBoxArea(this, "Plaintext");
     this->ciphertextbox_area = new InputBoxArea(this, "Ciphertext");
     this->vigenerekeybox_area = new VigenereKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
     this->fullvigenerekeybox_area = new FullVigenereKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
     this->autokeyvigenerekeybox_area = new AutoKeyVigenereKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
+    this->extendedvigenerekeybox_area = new ExtendedVigenereKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
     this->playfairkeybox_area = new PlayfairKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
     this->affinekeybox_area = new AffineKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
 
@@ -24,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent, int width, int height) {
     tab_widget->addTab(vigenerekeybox_area, "Vigenere Cipher");
     tab_widget->addTab(fullvigenerekeybox_area, "Full Vigenere Cipher");
     tab_widget->addTab(autokeyvigenerekeybox_area, "Auto-key Vigenere Cipher");
+    tab_widget->addTab(extendedvigenerekeybox_area, "Extended Vigenere Cipher");
     tab_widget->addTab(playfairkeybox_area, "Playfair Cipher");
     tab_widget->addTab(affinekeybox_area, "Affine Cipher");
     /* tab_widget->addTab(this->inputbox_area2, "Full Vigenere Cipher"); */

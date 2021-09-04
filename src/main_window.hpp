@@ -8,6 +8,7 @@
 #include "vigenerekeybox_area.hpp"
 #include "fullvigenerekeybox_area.hpp"
 #include "autokeyvigenerekeybox_area.hpp"
+#include "extendedvigenerekeybox_area.hpp"
 #include "playfairkeybox_area.hpp"
 #include "affinekeybox_area.hpp"
 
@@ -19,6 +20,7 @@ private:
     VigenereKeyBoxArea *vigenerekeybox_area;
     FullVigenereKeyBoxArea *fullvigenerekeybox_area;
     AutoKeyVigenereKeyBoxArea *autokeyvigenerekeybox_area;
+    ExtendedVigenereKeyBoxArea *extendedvigenerekeybox_area;
     PlayfairKeyBoxArea *playfairkeybox_area;
     AffineKeyBoxArea *affinekeybox_area;
 public:

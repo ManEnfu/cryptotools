@@ -12,6 +12,7 @@ std::string autokey_vigenere_encrypt(std::string p, std::string k) {
     for (std::string::iterator pit = p.begin(), kit = k.begin(); pit != p.end(); pit++, kit++) {
         if (kit == k.end()) kit = p.begin();
         char cc = *pit + (*kit - 'A');
+        if (cc < 'A') cc += 26;
         if (cc > 'Z') cc -= 26;
         c.push_back(cc);
     }
@@ -29,6 +30,9 @@ std::string autokey_vigenere_decrypt(std::string c, std::string k) {
         if (kit == k.end()) kit = p.begin();
         char pc = *cit - (*kit - 'A');
         if (pc < 'A') pc += 26;
+        if (pc > 'Z') pc -= 26;
+        std::cout << *cit << " " << (int)*cit << " " << *kit <<  " " << (int) *kit << " " << pc  << " " << (int)pc<< "\n";
+
         p.push_back(pc);
     }
     return p;

@@ -7,7 +7,7 @@ AutoKeyVigenereKeyBoxArea::AutoKeyVigenereKeyBoxArea(QWidget* parent, QTextEdit*
 
 void AutoKeyVigenereKeyBoxArea::encrypt() {
     std::string p = this->_plain->toPlainText().toStdString();
-    std::string k = this->keybox->toPlainText().toStdString();
+    std::string k = this->keybox->text().toStdString();
     std::string c = autokey_vigenere_encrypt(p, k);
     std::cout << uppercase(p) << " " << k << " " << c << "\n";
     this->_cipher->setText(QString::fromStdString(c));
@@ -16,7 +16,7 @@ void AutoKeyVigenereKeyBoxArea::encrypt() {
 
 void AutoKeyVigenereKeyBoxArea::decrypt() {
     std::string c = this->_cipher->toPlainText().toStdString();
-    std::string k = this->keybox->toPlainText().toStdString();
+    std::string k = this->keybox->text().toStdString();
     std::string p = autokey_vigenere_decrypt(c, k);
     std::cout << p << " " << k << " " << c << "\n";
     this->_plain->setText(QString::fromStdString(p));

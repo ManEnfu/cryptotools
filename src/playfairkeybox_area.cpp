@@ -7,7 +7,7 @@ PlayfairKeyBoxArea::PlayfairKeyBoxArea(QWidget* parent, QTextEdit* plaintextbox,
 
 void PlayfairKeyBoxArea::encrypt() {
     std::string p = this->_plain->toPlainText().toStdString();
-    std::string k = this->keybox->toPlainText().toStdString();
+    std::string k = this->keybox->text().toStdString();
     std::string c = playfair_encrypt(p, k);
     std::cout << uppercase(p) << " " << k << " " << c << "\n";
     this->_cipher->setText(QString::fromStdString(c));
@@ -16,7 +16,7 @@ void PlayfairKeyBoxArea::encrypt() {
 
 void PlayfairKeyBoxArea::decrypt() {
     std::string c = this->_cipher->toPlainText().toStdString();
-    std::string k = this->keybox->toPlainText().toStdString();
+    std::string k = this->keybox->text().toStdString();
     std::string p = playfair_decrypt(c, k);
     std::cout << p << " " << k << " " << c << "\n";
     this->_plain->setText(QString::fromStdString(p));

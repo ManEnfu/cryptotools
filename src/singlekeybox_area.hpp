@@ -4,11 +4,12 @@
 #include <QWidget>
 #include <QTextEdit>
 #include <QPushButton>
+#include <QLineEdit>
 
 class SingleKeyBoxArea: public QWidget {
     Q_OBJECT
 public:
-    QTextEdit* keybox;
+    QLineEdit* keybox;
     QPushButton* encrypt_button;
     QPushButton* decrypt_button;
     explicit SingleKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox);

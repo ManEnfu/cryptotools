@@ -5,13 +5,13 @@
 #include <iostream>
 
 SingleKeyBoxArea::SingleKeyBoxArea(QWidget* parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox) : QWidget(parent) {
-    this->keybox = new QTextEdit(this);
+    this->keybox = new QLineEdit(this);
     this->encrypt_button = new QPushButton("Encrypt", this);
     this->decrypt_button = new QPushButton("Decrypt", this);
     
-    QHBoxLayout* layout = new QHBoxLayout(this);
-    QVBoxLayout* leftlayout = new QVBoxLayout(this);
-    QVBoxLayout* rightlayout = new QVBoxLayout(this);
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    QHBoxLayout* leftlayout = new QHBoxLayout(this);
+    QHBoxLayout* rightlayout = new QHBoxLayout(this);
     QLabel* label = new QLabel("Key", this);
 
     leftlayout->addWidget(label);
@@ -19,6 +19,7 @@ SingleKeyBoxArea::SingleKeyBoxArea(QWidget* parent, QTextEdit *plaintextbox, QTe
     rightlayout->addWidget(encrypt_button);
     rightlayout->addWidget(decrypt_button);
     layout->addLayout(leftlayout);
+    layout->addStretch();
     layout->addLayout(rightlayout);
     this->setLayout(layout);
 

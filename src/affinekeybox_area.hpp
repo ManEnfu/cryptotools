@@ -4,12 +4,13 @@
 #include <QWidget>
 #include <QTextEdit>
 #include <QPushButton>
+#include <QLineEdit>
 
 class AffineKeyBoxArea: public QWidget {
     Q_OBJECT
 public:
-    QTextEdit* mbox;
-    QTextEdit* bbox;
+    QLineEdit* mbox;
+    QLineEdit* bbox;
     QPushButton* encrypt_button;
     QPushButton* decrypt_button;
     explicit AffineKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox);
