@@ -6,8 +6,8 @@
 PlayfairBigramForm::PlayfairBigramForm() {}
 
 PlayfairBigramForm::PlayfairBigramForm(std::string str) {
-    uppercase(str);
-    filter_alphabet(str);
+    str = uppercase(str);
+    str = filter_alphabet(str);
     std::string prep = playfair_preprocess(str);
     for (auto it = prep.begin(); it != prep.end(); it++) {
         char c1 = *it;
@@ -28,8 +28,8 @@ std::string PlayfairBigramForm::to_string() {
 
 std::string playfair_convert_key(std::string k) {
     std::string ret;
-    uppercase(k);
-    filter_alphabet(k);
+    k = uppercase(k);
+    k = filter_alphabet(k);
     for (std::string::iterator kit = k.begin(); kit !=k.end(); kit++) {
         if (*kit != 'J') {
             if (ret.find(*kit) == std::string::npos) {
@@ -108,6 +108,7 @@ std::pair<char, char> playfair_decrypt_pair(std::pair<char, char> bigram, std::s
 }
 
 std::string playfair_encrypt(std::string p, std::string k) {
+    k = playfair_convert_key(k);
     PlayfairBigramForm pb(p);
     PlayfairBigramForm cb;
     for (auto it = pb.bigrams.begin(); it != pb.bigrams.end(); it++) {
@@ -117,6 +118,7 @@ std::string playfair_encrypt(std::string p, std::string k) {
 }
 
 std::string playfair_decrypt(std::string c, std::string k) {
+    k = playfair_convert_key(k);
     PlayfairBigramForm cb(c);
     PlayfairBigramForm pb;
     for (auto it = cb.bigrams.begin(); it != cb.bigrams.end(); it++) {

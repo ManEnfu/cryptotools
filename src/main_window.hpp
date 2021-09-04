@@ -5,13 +5,22 @@
 #include <QLabel>
 #include "inputbox_area.hpp"
 #include "singlekeybox_area.hpp"
+#include "vigenerekeybox_area.hpp"
+#include "fullvigenerekeybox_area.hpp"
+#include "autokeyvigenerekeybox_area.hpp"
+#include "playfairkeybox_area.hpp"
+#include "affinekeybox_area.hpp"
 
 class MainWindow: public QMainWindow {
 private:
     QLabel *label;
     InputBoxArea *plaintextbox_area;
     InputBoxArea *ciphertextbox_area;
-    SingleKeyBoxArea * vigenerekeybox_area;
+    VigenereKeyBoxArea *vigenerekeybox_area;
+    FullVigenereKeyBoxArea *fullvigenerekeybox_area;
+    AutoKeyVigenereKeyBoxArea *autokeyvigenerekeybox_area;
+    PlayfairKeyBoxArea *playfairkeybox_area;
+    AffineKeyBoxArea *affinekeybox_area;
 public:
     MainWindow(QWidget *parent, int width, int height);
     ~MainWindow();

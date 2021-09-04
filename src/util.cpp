@@ -5,6 +5,7 @@ std::string uppercase(std::string str) {
     std::string ret;
     for (std::string::iterator it = str.begin(); it != str.end(); it++) {
         if (*it >= 'a' && *it <= 'z') ret.push_back(*it - 32);
+        else ret.push_back(*it);
     }
     return ret;
 }
