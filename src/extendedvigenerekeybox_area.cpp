@@ -6,7 +6,11 @@
 #include <QBoxLayout>
 #include <QFileDialog>
 
-ExtendedVigenereKeyBoxArea::ExtendedVigenereKeyBoxArea(QWidget* parent, QTextEdit* plaintextbox, QTextEdit* ciphertextbox) : QWidget(parent) {
+ExtendedVigenereKeyBoxArea::ExtendedVigenereKeyBoxArea(
+    QWidget* parent, 
+    QTextEdit* plaintextbox, 
+    QTextEdit* ciphertextbox
+) : QWidget(parent) {
     this->keybox = new QLineEdit(this);
     this->open_button = new QPushButton("Open", this);
     this->encrypt_button = new QPushButton("Encrypt and Save", this);
@@ -57,10 +61,8 @@ void ExtendedVigenereKeyBoxArea::encrypt() {
     while(f.get(ch))
         p.push_back(ch);
     f.close();
-    std::cout << "done reading\n";
     std::string k = this->keybox->text().toStdString();
     std::string c = extended_vigenere_encrypt(p, k);
-    std::cout << "done encrypting\n";
     this->save(c);
 }
 
@@ -82,11 +84,9 @@ void ExtendedVigenereKeyBoxArea::decrypt() {
 void ExtendedVigenereKeyBoxArea::save(std::string str) {
     QString fname = QFileDialog::getSaveFileName(this, tr("Open File"), ".");
     if (fname.compare("")) {
-        /* std::cout << "save " << filename.toStdString() << "\n"; */
         std::ofstream f;
         f.open(fname.toStdString());
         if (!f.is_open()) return;
-        /* std::string str = this->textbox->toPlainText().toStdString(); */
         for (auto it = str.begin(); it != str.end(); it++)
             f.put(*it);
         f.close();
@@ -98,15 +98,6 @@ void ExtendedVigenereKeyBoxArea::handle_open_button() {
     if (fname.compare("")) {
         this->filename = fname.toStdString();
         this->filename_label->setText(fname);
-        /* std::cout << "open " << filename.toStdString() << "\n"; */
-        /* std::ifstream f; */
-        /* f.open(filename.toStdString()); */
-        /* if (!f.is_open()) return; */
-        /* QString newstr; */
-        /* char c; */
-        /* while(f.get(c)) */
-        /*     newstr.push_back(c); */
-        /* f.close(); */
     }
 }
 

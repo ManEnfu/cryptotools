@@ -48,7 +48,8 @@ std::string full_vigenere_encrypt(std::string p, std::string k) {
     p = filter_alphabet(p);
    
     std::string c;
-    for (std::string::iterator pit = p.begin(), kit = k.begin(); pit != p.end(); pit++, kit++) {
+    for (std::string::iterator pit = p.begin(), kit = k.begin(); 
+            pit != p.end(); pit++, kit++) {
         if (kit == k.end()) kit = k.begin();
         char cc = fvt[*kit - 'A'][*pit -'A'];
         c.push_back(cc);
@@ -64,7 +65,8 @@ std::string full_vigenere_decrypt(std::string c, std::string k) {
     c = filter_alphabet(c);
    
     std::string p;
-    for (std::string::iterator cit = c.begin(), kit = k.begin(); cit != c.end(); cit++, kit++) {
+    for (std::string::iterator cit = c.begin(), kit = k.begin(); 
+            cit != c.end(); cit++, kit++) {
         if (kit == k.end()) kit = k.begin();
         char pc = 0;
         for (; fvt[*kit -'A'][pc] != *cit; pc++);

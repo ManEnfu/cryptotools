@@ -6,7 +6,11 @@
 
 class PlayfairKeyBoxArea: public SingleKeyBoxArea {
 public:
-    PlayfairKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit* ciphertextbox);
+    PlayfairKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit* ciphertextbox
+    );
     void encrypt();
     void decrypt();
 };

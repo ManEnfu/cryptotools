@@ -15,7 +15,11 @@ public:
     QPushButton* encrypt_button;
     QPushButton* decrypt_button;
     std::string filename;
-    ExtendedVigenereKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit* ciphertextbox);
+    ExtendedVigenereKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit* ciphertextbox
+    );
     ~ExtendedVigenereKeyBoxArea();
     void encrypt();
     void decrypt();

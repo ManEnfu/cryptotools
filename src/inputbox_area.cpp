@@ -4,7 +4,8 @@
 #include <fstream>
 #include <QFileDialog>
 
-InputBoxArea::InputBoxArea(QWidget* parent, const QString& labelstr) : QWidget(parent) {
+InputBoxArea::InputBoxArea(QWidget* parent, const QString& labelstr) : 
+    QWidget(parent) {
     QVBoxLayout* layout = new QVBoxLayout(this);
     QLabel* label = new QLabel(labelstr, this);
 
@@ -34,14 +35,7 @@ InputBoxArea::InputBoxArea(QWidget* parent, const QString& labelstr) : QWidget(p
 }
 
 InputBoxArea::~InputBoxArea() {
-    /* delete this->plaintextbox; */
-    /* delete this->ciphertextbox; */
-    /* delete this->encrypt_button; */
-    /* delete this->decrypt_button; */
-    /* delete this->open_plaintext_button; */
-    /* delete this->save_plaintext_button; */
-    /* delete this->open_ciphertext_button; */
-    /* delete this->save_ciphertext_button; */
+    //
 }
 
 void InputBoxArea::handle_open_button() {

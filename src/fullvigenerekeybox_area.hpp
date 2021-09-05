@@ -5,7 +5,11 @@
 
 class FullVigenereKeyBoxArea: public SingleKeyBoxArea {
 public:
-    FullVigenereKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit* ciphertextbox);
+    FullVigenereKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit* ciphertextbox
+    );
     void encrypt();
     void decrypt();
 };

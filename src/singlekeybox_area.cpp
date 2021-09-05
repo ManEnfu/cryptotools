@@ -4,7 +4,11 @@
 #include <QBoxLayout>
 #include <iostream>
 
-SingleKeyBoxArea::SingleKeyBoxArea(QWidget* parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox) : QWidget(parent) {
+SingleKeyBoxArea::SingleKeyBoxArea(
+    QWidget* parent, 
+    QTextEdit *plaintextbox, 
+    QTextEdit *ciphertextbox
+) : QWidget(parent) {
     this->keybox = new QLineEdit(this);
     this->encrypt_button = new QPushButton("Encrypt", this);
     this->decrypt_button = new QPushButton("Decrypt", this);

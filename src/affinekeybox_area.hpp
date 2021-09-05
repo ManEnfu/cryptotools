@@ -13,7 +13,11 @@ public:
     QLineEdit* bbox;
     QPushButton* encrypt_button;
     QPushButton* decrypt_button;
-    explicit AffineKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox);
+    explicit AffineKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit *ciphertextbox
+    );
     ~AffineKeyBoxArea();
     void encrypt();
     void decrypt();

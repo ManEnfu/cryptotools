@@ -6,7 +6,7 @@
 
 MainWindow::MainWindow(QWidget *parent, int width, int height)
     : QMainWindow(parent) {
-    this->setWindowTitle("CryptTools");
+    this->setWindowTitle("CryptoTools");
     this->plaintextbox_area = new InputBoxArea(this, "Plaintext");
     this->ciphertextbox_area = new InputBoxArea(this, "Ciphertext");
     this->vigenerekeybox_area = new VigenereKeyBoxArea(NULL, plaintextbox_area->textbox, ciphertextbox_area->textbox);
@@ -22,14 +22,12 @@ MainWindow::MainWindow(QWidget *parent, int width, int height)
     
 
     QTabWidget* tab_widget = new QTabWidget(this); 
-    /* tab_widget->setTabPosition(QTabWidget::West); */
     tab_widget->addTab(vigenerekeybox_area, "Vigenere Cipher");
     tab_widget->addTab(fullvigenerekeybox_area, "Full Vigenere Cipher");
     tab_widget->addTab(autokeyvigenerekeybox_area, "Auto-key Vigenere Cipher");
     tab_widget->addTab(extendedvigenerekeybox_area, "Extended Vigenere Cipher");
     tab_widget->addTab(playfairkeybox_area, "Playfair Cipher");
     tab_widget->addTab(affinekeybox_area, "Affine Cipher");
-    /* tab_widget->addTab(this->inputbox_area2, "Full Vigenere Cipher"); */
     
 
     toplayout->addWidget(plaintextbox_area);

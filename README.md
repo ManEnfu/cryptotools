@@ -1,3 +1,5 @@
+# CryptoTools
+
 ## Dependencies
 
 - Qt5
@@ -9,3 +11,5 @@ Run the following commands
 $ qmake
 $ make
 ```
+
+13518115 M Naufal Fakhrizal

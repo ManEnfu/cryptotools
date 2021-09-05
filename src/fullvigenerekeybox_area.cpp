@@ -3,7 +3,11 @@
 #include "util.hpp"
 #include <iostream>
 
-FullVigenereKeyBoxArea::FullVigenereKeyBoxArea(QWidget* parent, QTextEdit* plaintextbox, QTextEdit* ciphertextbox) : SingleKeyBoxArea(parent, plaintextbox, ciphertextbox) {}
+FullVigenereKeyBoxArea::FullVigenereKeyBoxArea(
+    QWidget* parent, 
+    QTextEdit* plaintextbox, 
+    QTextEdit* ciphertextbox
+) : SingleKeyBoxArea(parent, plaintextbox, ciphertextbox) {}
 
 void FullVigenereKeyBoxArea::encrypt() {
     std::string p = this->_plain->toPlainText().toStdString();

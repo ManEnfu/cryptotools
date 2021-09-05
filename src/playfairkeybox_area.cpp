@@ -3,7 +3,11 @@
 #include "util.hpp"
 #include <iostream>
 
-PlayfairKeyBoxArea::PlayfairKeyBoxArea(QWidget* parent, QTextEdit* plaintextbox, QTextEdit* ciphertextbox) : SingleKeyBoxArea(parent, plaintextbox, ciphertextbox) {}
+PlayfairKeyBoxArea::PlayfairKeyBoxArea(
+    QWidget* parent, 
+    QTextEdit* plaintextbox, 
+    QTextEdit* ciphertextbox
+) : SingleKeyBoxArea(parent, plaintextbox, ciphertextbox) {}
 
 void PlayfairKeyBoxArea::encrypt() {
     std::string p = this->_plain->toPlainText().toStdString();

@@ -3,7 +3,11 @@
 #include "util.hpp"
 #include <iostream>
 
-AutoKeyVigenereKeyBoxArea::AutoKeyVigenereKeyBoxArea(QWidget* parent, QTextEdit* plaintextbox, QTextEdit* ciphertextbox) : SingleKeyBoxArea(parent, plaintextbox, ciphertextbox) {}
+AutoKeyVigenereKeyBoxArea::AutoKeyVigenereKeyBoxArea(
+    QWidget* parent, 
+    QTextEdit* plaintextbox, 
+    QTextEdit* ciphertextbox
+) : SingleKeyBoxArea(parent, plaintextbox, ciphertextbox) {}
 
 void AutoKeyVigenereKeyBoxArea::encrypt() {
     std::string p = this->_plain->toPlainText().toStdString();

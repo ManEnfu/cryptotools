@@ -5,7 +5,11 @@
 #include <iostream>
 
 
-AffineKeyBoxArea::AffineKeyBoxArea(QWidget* parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox) : QWidget(parent) {
+AffineKeyBoxArea::AffineKeyBoxArea(
+    QWidget* parent, 
+    QTextEdit *plaintextbox, 
+    QTextEdit *ciphertextbox
+) : QWidget(parent) {
     this->mbox = new QLineEdit(this);
     this->bbox = new QLineEdit(this);
     this->encrypt_button = new QPushButton("Encrypt", this);

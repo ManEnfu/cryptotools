@@ -6,7 +6,11 @@
 
 class AutoKeyVigenereKeyBoxArea: public SingleKeyBoxArea {
 public:
-    AutoKeyVigenereKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit* ciphertextbox);
+    AutoKeyVigenereKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit* ciphertextbox
+    );
     void encrypt();
     void decrypt();
 };

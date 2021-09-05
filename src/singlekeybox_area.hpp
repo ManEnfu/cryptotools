@@ -12,7 +12,11 @@ public:
     QLineEdit* keybox;
     QPushButton* encrypt_button;
     QPushButton* decrypt_button;
-    explicit SingleKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit *ciphertextbox);
+    explicit SingleKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit *ciphertextbox
+    );
     ~SingleKeyBoxArea();
     virtual void encrypt() = 0;
     virtual void decrypt() = 0;

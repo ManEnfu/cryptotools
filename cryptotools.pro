@@ -4,7 +4,7 @@
 
 QT = core widgets
 TEMPLATE = app
-TARGET = crypttools
+TARGET = cryptotools
 INCLUDEPATH += .
 
 # You can make your code fail to compile if you use deprecated APIs.

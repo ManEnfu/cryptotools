@@ -6,7 +6,11 @@
 
 class VigenereKeyBoxArea: public SingleKeyBoxArea {
 public:
-    VigenereKeyBoxArea(QWidget *parent, QTextEdit *plaintextbox, QTextEdit* ciphertextbox);
+    VigenereKeyBoxArea(
+        QWidget *parent, 
+        QTextEdit *plaintextbox, 
+        QTextEdit* ciphertextbox
+    );
     void encrypt();
     void decrypt();
 };
